@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="description" content="Центр молодёжных проектов РГПУ им А.И. Герцена - пространство для реализации студенческих инициатив">
+    
+    <title>Центр молодёжных проектов РГПУ им А.И. Герцена</title>
+    
+    <!-- Предзагрузка критичных ресурсов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- Иконки и шрифты -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Анимации -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="light-theme">
+    <!-- Контейнер приложения -->
+    <div class="app-container">
+        <!-- Боковое меню (скрыто на мобильных) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <!-- Вариант с изображением логотипа -->
+                    <div class="logo-image">
+                        <img src="logo-herzen.png" alt="Логотип РГПУ им. А.И. Герцена" 
+                             onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';">
+                        <div class="logo-fallback">
+                            <i class="fas fa-university"></i>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">ЦМП Герцена</span>
+                        <span class="logo-subtitle">Молодёжные проекты</span>
+                    </div>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Закрыть меню">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Основная навигация">
+                <!-- Поиск -->
+                <div class="sidebar-search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="search" 
+                           placeholder="Поиск проектов..." 
+                           aria-label="Поиск по сайту">
+                </div>
+
+                <!-- Основная навигация с компактными бейджами -->
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Навигация</h3>
+                    <ul class="nav-menu">
+                        <li class="nav-item active">
+                            <a href="index.html" aria-current="page">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                                <span>Главная</span>
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="clean.html">
+                                <i class="fas fa-rocket" aria-hidden="true"></i>
+                                <span>Проекты</span>
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="events.html">
+                                <i class="fas fa-star" aria-hidden="true"></i>
+                                <span>Мероприятия</span>
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="clubs.html">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                <span>Объединения</span>
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="grants.html">
+                                <i class="fas fa-award" aria-hidden="true"></i>
+                                <span>Гранты</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="volunteering.html">
+                                <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                                <span>Волонтёрство</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Дополнительные ресурсы -->
+                <div class="nav-section">
+                    <h3 class="nav-section-title">Ресурсы</h3>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="media.html">
+                                <i class="fas fa-photo-video" aria-hidden="true"></i>
+                                <span>Медиа</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contacts.html">
+                                <i class="fas fa-address-card" aria-hidden="true"></i>
+                                <span>Контакты</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="partners.html">
+                                <i class="fas fa-handshake" aria-hidden="true"></i>
+                                <span>Партнёры</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Футер меню -->
+                <div class="sidebar-footer">
+                    <div class="theme-switch">
+                        <button class="theme-btn" id="themeToggle" aria-label="Переключить тему">
+                            <i class="fas fa-moon" aria-hidden="true"></i>
+                            <span>Тёмная тема</span>
+                        </button>
+                    </div>
+                    <button class="btn-login" id="loginBtn" aria-label="Войти в аккаунт">
+                        <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                        <span>Войти в аккаунт</span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Основное содержимое -->
+        <div class="main-content">
+            <!-- Мобильная шапка -->
+            <header class="mobile-header" id="mobileHeader">
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="sidebar">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <div class="logo">
+                    <div class="logo-image">
+                        <div class="logo-fallback">
+                            <i class="fas fa-university"></i>
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">ЦМП Герцена</span>
+                    </div>
+                </div>
+                <button class="btn btn-sm btn-outline" id="mobileLoginBtn" aria-label="Войти">
+                    <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                    <span class="sr-only">Войти</span>
+                </button>
+            </header>
+
+            <!-- Динамическая шапка с КРЕАТИВНОЙ ДАТОЙ -->
+            <section class="dynamic-header" aria-label="Приветствие">
+                <div class="header-content">
+                    <h1 class="header-title animate__animated animate__fadeInUp">
+                        Центр молодёжных <span class="gradient-text">проектов</span>
+                    </h1>
+                    <p class="header-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                        РГПУ им. А.И. Герцена — пространство для реализации твоих идей
+                    </p>
+                </div>
+                <div class="header-shapes" aria-hidden="true">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </section>
+
+            <!-- Бегущая строка -->
+            <div class="news-ticker">
+                <div class="ticker-content">
+                    <span class="ticker-label"><i class="fas fa-bullhorn" aria-hidden="true"></i> Актуально:</span>
+                    <span class="ticker-item">Старт приёма заявок на грантовый конкурс «Студенческая инициатива»</span>
+                    <span class="ticker-item">Завтра: Хакатон по разработке социальных приложений</span>
+                    <span class="ticker-item">Новый клуб «Эко-Герцен» приглашает участников</span>
+                </div>
+            </div>
+
+            <!-- Основной контент -->
+            <main class="content" id="mainContent">
+                <!-- Ключевые разделы -->
+                <section class="key-sections" aria-labelledby="keySectionsTitle">
+                    <h2 class="section-title" id="keySectionsTitle">Начни реализовывать идеи</h2>
+                    <div class="sections-grid">
+                        <a href="projects.html" class="section-card project-card animate__animated animate__fadeInUp">
+                            <div class="card-icon" aria-hidden="true">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Подать проект</h3>
+                            <p>От идеи до реализации. Получи поддержку экспертов и ресурсы.</p>
+                            <div class="card-arrow" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+
+                        <a href="events.html" class="section-card event-card animate__animated animate__fadeInUp animate__delay-1s">
+                            <div class="card-icon" aria-hidden="true">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h3>Найти мероприятие</h3>
+                            <p>Хакатоны, лекции, мастер-классы — выбирай и участвуй.</p>
+                            <div class="card-arrow" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+
+                        <a href="clubs.html" class="section-card club-card animate__animated animate__fadeInUp animate__delay-2s">
+                            <div class="card-icon" aria-hidden="true">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Вступить в объединение</h3>
+                            <p>Найди единомышленников в одном из 25+ студенческих клубов.</p>
+                            <div class="card-arrow" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Активные проекты -->
+                <section class="featured-projects" aria-labelledby="projectsTitle">
+                    <div class="section-header">
+                        <h2 class="section-title" id="projectsTitle">Активные проекты</h2>
+                        <a href="projects.html" class="view-all">
+                            Смотреть все
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="projects-grid">
+                        <article class="project-card-large animate__animated animate__fadeInUp">
+                            <div class="project-badge" aria-label="Проект получил грант">Грант победитель</div>
+                            <div class="project-content">
+                                <h3>«Цифровой музей Герцена»</h3>
+                                <p>Создание интерактивной платформы с VR-экскурсиями по истории университета.</p>
+                                <div class="project-stats">
+                                    <span><i class="fas fa-users" aria-hidden="true"></i> 12 участников</span>
+                                    <span><i class="fas fa-calendar" aria-hidden="true"></i> До 20 декабря</span>
+                                </div>
+                                <div class="project-progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-fill" style="width: 65%"></div>
+                                    </div>
+                                    <span>65% выполнено</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card-large animate__animated animate__fadeInUp animate__delay-1s">
+                            <div class="project-badge" aria-label="Открыт набор участников">Новый набор</div>
+                            <div class="project-content">
+                                <h3>Эко-марафон «Зелёный кампус»</h3>
+                                <p>Серия мероприятий по внедрению раздельного сбора отходов в университете.</p>
+                                <div class="project-stats">
+                                    <span><i class="fas fa-users" aria-hidden="true"></i> 45 волонтёров</span>
+                                    <span><i class="fas fa-calendar" aria-hidden="true"></i> Идёт сейчас</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm">Присоединиться</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Красивые полезные ссылки -->
+<section class="beautiful-links" aria-labelledby="linksTitle">
+    <div class="section-header">
+        <h2 class="section-title" id="linksTitle">Мы в соцсетях и полезные ресурсы</h2>
+        <a href="contacts.html" class="view-all">
+            Все контакты
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+        </a>
+    </div>
+    
+    <div class="links-grid">
+        <!-- Официальные ресурсы РГПУ -->
+        <a href="https://herzen.spb.ru" class="link-card link-card-main" target="_blank" rel="noopener noreferrer">
+            <div class="link-icon" style="background: linear-gradient(135deg, #4f46e5, #8b5cf6);">
+                <i class="fas fa-university"></i>
+            </div>
+            <div class="link-content">
+                <h3>Официальный сайт</h3>
+                <p>РГПУ им. А.И. Герцена</p>
+                <span class="link-badge">Основной ресурс</span>
+            </div>
+            <div class="link-arrow">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+        </a>
+
+        <!-- ВКонтакте -->
+        <a href="https://vk.com/herzenuniversity" class="link-card link-card-vk" target="_blank" rel="noopener noreferrer">
+            <div class="link-icon" style="background: linear-gradient(135deg, #4c75a3, #5a7fa6);">
+                <i class="fab fa-vk"></i>
+            </div>
+            <div class="link-content">
+                <h3>ВКонтакте</h3>
+                <p>Группа университета</p>
+                <span class="link-stats">
+                    <i class="fas fa-users"></i> 75K подписчиков
+                </span>
+            </div>
+            <div class="link-arrow">
+                <i class="fab fa-vk"></i>
+            </div>
+            <div class="link-wave" aria-hidden="true"></div>
+        </a>
+
+        <!-- Телеграм -->
+        <a href="https://t.me/herzen_news" class="link-card link-card-tg" target="_blank" rel="noopener noreferrer">
+            <div class="link-icon" style="background: linear-gradient(135deg, #2aabee, #229ed9);">
+                <i class="fab fa-telegram"></i>
+            </div>
+            <div class="link-content">
+                <h3>Телеграм-канал</h3>
+                <p>Новости и анонсы</p>
+                <span class="link-stats">
+                    <i class="fas fa-bell"></i> Ежедневные обновления
+                </span>
+            </div>
+            <div class="link-arrow">
+                <i class="fab fa-telegram"></i>
+            </div>
+        </a>
+
+        <!-- Документы -->
+        <a href="docs.html" class="link-card link-card-docs">
+            <div class="link-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="link-content">
+                <h3>Документы</h3>
+                <p>Положения и формы</p>
+                <span class="link-badge badge-new">Обновлено</span>
+            </div>
+            <div class="link-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </a>
+
+    </div>
+    
+    <!-- Мини-ссылки для быстрого доступа -->
+    <div class="mini-links">
+        <a href="https://vk.com/herzen_students" class="mini-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-vk"></i>
+            <span>Студенческий совет</span>
+        </a>
+        <a href="https://t.me/herzen_events" class="mini-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram"></i>
+            <span>Анонсы мероприятий</span>
+        </a>
+        <a href="mailto:cmp@herzen.spb.ru" class="mini-link">
+            <i class="fas fa-envelope"></i>
+            <span>Написать нам</span>
+        </a>
+        <a href="tel:+78123124567" class="mini-link">
+            <i class="fas fa-phone"></i>
+            <span>+7 (812) 312-45-67</span>
+        </a>
+    </div>
+</section>
+            <!-- Футер -->
+            <footer class="main-footer" role="contentinfo">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <div class="logo-image">
+                            <div class="logo-fallback">
+                                <i class="fas fa-university"></i>
+                            </div>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-title">ЦМП Герцена</span>
+                            <span class="logo-subtitle">РГПУ им. А.И. Герцена</span>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <a href="privacy.html">Политика конфиденциальности</a>
+                        <a href="contacts.html">Контакты</a>
+                        <a href="https://vk.com/herzenuniversity" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+                        <a href="mailto:cmp@herzen.spb.ru">Написать нам</a>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2025 Центр молодёжных проектов РГПУ им. А.И. Герцена
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Мобильное меню снизу -->
+        <nav class="bottom-nav" aria-label="Мобильная навигация">
+            <a href="index.html" class="bottom-nav-item active" aria-current="page" aria-label="Главная">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <span>Главная</span>
+            </a>
+            <a href="projects.html" class="bottom-nav-item" aria-label="Проекты">
+                <i class="fas fa-rocket" aria-hidden="true"></i>
+                <span>Проекты</span>
+            </a>
+            <a href="events.html" class="bottom-nav-item" aria-label="Мероприятия">
+                <i class="fas fa-calendar-star" aria-hidden="true"></i>
+                                <span>Мероприятия</span>
+            </a>
+            <a href="clubs.html" class="bottom-nav-item" aria-label="Объединения">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                <span>Клубы</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Модальное окно входа -->
+    <div class="login-modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true">
+        <div class="login-content">
+            <h2 id="loginTitle">Вход в аккаунт</h2>
+            <p>Функция входа появится в ближайшее время.</p>
+            <button class="btn btn-primary" id="closeLoginModal">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Загрузка скриптов -->
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/responsive.js" defer></script>
+    <script>
+        // Простая функция для показа уведомлений (временная)
+        function showNotification(message, type = 'info') {
+            alert(message);
+        }
+        window.showNotification = showNotification;
+    </script>
+</body>
+</html>

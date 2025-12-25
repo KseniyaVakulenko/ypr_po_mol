@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Серый макет | РГПУ Портал</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-right: 2px solid #ccc;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background-color: #d0d0d0;
+            padding: 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        
+        .content {
+            padding: 30px;
+            flex: 1;
+        }
+        
+        .gray-block {
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .gray-block-large {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .gray-block-medium {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .gray-block-small {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            color: #444;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        
+        h2 {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        h3 {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: #d0d0d0;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #444;
+        }
+        
+        .nav-item:hover {
+            background-color: #c5c5c5;
+        }
+        
+        .nav-item.active {
+            background-color: #b0b0b0;
+            font-weight: bold;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        
+        .footer {
+            background-color: #d0d0d0;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ccc;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="logo">РГПУ Портал</div>
+            <a href="index.html" class="nav-item">← Назад на главную</a>
+            <a href="#" class="nav-item active">Раздел 1</a>
+            <a href="#" class="nav-item">Раздел 2</a>
+            <a href="#" class="nav-item">Раздел 3</a>
+            <a href="#" class="nav-item">Раздел 4</a>
+            <a href="#" class="nav-item">Раздел 5</a>
+        </aside>
+        
+        <main class="main-content">
+            <header class="header">
+                <h1>Серый макет страницы</h1>
+                <p>Это демонстрационная страница с серыми блоками для планирования структуры</p>
+            </header>
+            
+            <div class="content">
+                <div class="gray-block gray-block-large">
+                    Основной контентный блок
+                </div>
+                
+                <h2>Секция с элементами</h2>
+                
+                <div class="grid">
+                    <div class="gray-block gray-block-medium">
+                        Блок 1
+                    </div>
+                    <div class="gray-block gray-block-medium">
+                        Блок 2
+                    </div>
+                    <div class="gray-block gray-block-medium">
+                        Блок 3
+                    </div>
+                </div>
+                
+                <h2>Дополнительные элементы</h2>
+                
+                <div class="gray-block gray-block-small">
+                    Информационный блок
+                </div>
+                
+                <div class="gray-block gray-block-small">
+                    Ещё один информационный блок
+                </div>
+                
+                <div class="gray-block gray-block-small">
+                    И ещё один блок
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <p>© 2024 РГПУ им. Герцена. Это демонстрационный макет.</p>
+                <p>Все элементы на этой странице представлены в виде серых блоков для планирования.</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>

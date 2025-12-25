@@ -1,0 +1,24 @@
+{
+  "name": "herzen-youth-portal",
+  "version": "1.0.0",
+  "description": "Сайт Управления по молодежной политике РГПУ им. Герцена",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "build": "echo 'Build completed'",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "университет",
+    "студенты",
+    "молодежная политика",
+    "ргпу",
+    "герцен"
+  ],
+  "author": "Студент РГПУ",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "gh-pages": "^5.0.0"
+  }
+}
